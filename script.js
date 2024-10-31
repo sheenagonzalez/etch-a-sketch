@@ -14,10 +14,12 @@ const createNewGrid = function () {
       div = document.createElement('div');
       div.style.width = `${width}px`;
       div.style.height = `${height}px`;
+      div.style.opacity = 0;
       div.classList.add('pixel');
       // Change background color of square pixel when hovering over it
       div.addEventListener('mouseenter', (e) => {
-        e.target.style.background = 'black';
+        e.target.style.backgroundColor = 'black';
+        e.target.style.opacity = +e.target.style.opacity + 0.1;
       });
       container.appendChild(div);
     }
